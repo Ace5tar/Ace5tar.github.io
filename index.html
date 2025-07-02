@@ -8,21 +8,26 @@
 </head>
 <body>
     <h1>Click this button and something CRAZY will happen</h1>
-    <button id="swag-btn" onmousedown="showSwag()" onmouseup="hideSwag()">swag</button>
+    <button id="swag-btn" onclick="showSwag()">swag</button>
     <br><br>
-    <img id="swag" src="swag.jpg" hidden=true>
+    <img id="swag" src="swag.jpg">
 </body>
 
 <script>
 
-    const swag = document.getElementById("swag")
+    const swag = document.getElementById("swag");
+    swag.style.opacity = '0';
 
     function showSwag() {
-        swag.hidden = false
+        swag.style.opacity = '1.1';
     }
 
-    function hideSwag() {
-        swag.hidden = true
+    setInterval(fadeSwag, 20)
+
+    function fadeSwag() {
+        let swagOpacity = Number(swag.style.opacity)
+        swagOpacity -= 0.1
+        swag.style.opacity = String(swagOpacity)
     }
 
 </script>
