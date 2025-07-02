@@ -7,6 +7,23 @@
     <link rel="icon" type ="image/x-icon" href="favicon.png">
 </head>
 <body>
-    <h1>In Progress...</h1>
+    <h1>Click this button and something CRAZY will happen</h1>
+    <button id="swag-btn" onmousedown="showSwag()" onmouseup="hideSwag()">swag</button>
+    <br><br>
+    <img id="swag" src="swag.jpg" hidden=true>
 </body>
+
+<script>
+
+    const swag = document.getElementById("swag")
+
+    function showSwag() {
+        swag.hidden = false
+    }
+
+    function hideSwag() {
+        swag.hidden = true
+    }
+
+</script>
 </html>
